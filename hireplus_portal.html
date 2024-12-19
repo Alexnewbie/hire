@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire+ HR Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background: linear-gradient(to bottom, #1db954, #0a7430);
+            width: 20%;
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .nav-links {
+            margin: 20px 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 15px 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .settings {
+            margin-top: auto;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .settings img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .videos, .banned-users {
+            display: flex;
+            gap: 20px;
+            
+        }
+
+        .video-card, .user-card {
+            background: #000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            width: 200px;
+            height: 120px;
+            position: relative;
+        }
+
+        .video-card::before {
+            content: '\25B6'; /* Play icon */
+            font-size: 2rem;
+            position: absolute;
+            color: white;
+        }
+
+        .user-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .user-card {
+            background: #aaa;
+        }
+
+        /* Neocities Styling */
+        a {
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #fffa;
+        }
+
+        /* Loading Screen */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0a7430, #1db954);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        #loading .spinner {
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            border-top: 6px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+        Loading...
+    </div>
+
+    <div class="sidebar">
+        <h1>hire+</h1>
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">GROUP</a></li>
+            <li><a href="#">WHITELABEL</a></li>
+            <li><a href="#">DOMAIN</a></li>
+        </ul>
+        <div class="settings">
+            SETTINGS <span> | tagnz <img src="settings-icon.png" alt="settings icon"></span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <h2>VIDEOS</h2>
+            <div class="videos">
+                <div class="video-card">SETTING UP HIRE+ BETA</div>
+                <div class="video-card">INTRODUCTION TO STAFF+</div>
+                <div class="video-card">WHAT'S WHITELABEL?</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>BANNED USERS</h2>
+            <div class="banned-users">
+                <div class="user-card"><img src="https://www.roblox.com/headshot-thumbnail/image?userId=1263861104&width=150&height=150&format=png" alt="Roblox User Avatar"></div>
+                <div class="user-card"><img src="https://www.roblox.com/headshot-thumbnail/image?userId=2301601396&width=150&height=150&format=png" alt="Roblox User Avatar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').style.opacity = 0;
+                setTimeout(function() {
+                    document.getElementById('loading').style.display = 'none';
+                }, 1000);
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
